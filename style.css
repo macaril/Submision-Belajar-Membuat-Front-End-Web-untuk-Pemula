@@ -1,0 +1,219 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  margin-top: 0.5rem;
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#bookFormSubmit {
+  background-color: #2ecc71;
+  color: white;
+  font-size: medium;
+  padding: 15px 30px;
+}
+
+#bookFormSubmit:hover {
+  background-color: #27ae60;
+}
+
+#searchBook {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+#searchBook div {
+  flex: 1;
+}
+
+#searchSubmit {
+  background-color: #3498db;
+  color: white;
+}
+
+#searchSubmit:hover {
+  background-color: #2980b9;
+}
+
+#incompleteBookList,
+#completeBookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+[data-testid="bookItem"] {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+[data-testid="bookItemTitle"] {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+[data-testid="bookItemAuthor"],
+[data-testid="bookItemYear"] {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+[data-testid="bookItem"] div {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+[data-testid="bookItemIsCompleteButton"] {
+  background-color: #3498db;
+  color: white;
+}
+
+[data-testid="bookItemIsCompleteButton"]:hover {
+  background-color: #2980b9;
+}
+
+[data-testid="bookItemDeleteButton"] {
+  background-color: #e74c3c;
+  color: white;
+}
+
+[data-testid="bookItemDeleteButton"]:hover {
+  background-color: #c0392b;
+}
+
+[data-testid="bookItemEditButton"] {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
+
+[data-testid="bookItemEditButton"]:hover {
+  background-color: #f39c12;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #searchBook {
+    flex-direction: column;
+  }
+
+  [data-testid="bookItem"] div {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-testid="bookItem"] {
+  animation: fadeIn 0.3s ease-out;
+}
